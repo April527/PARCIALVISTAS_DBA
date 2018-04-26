@@ -1,0 +1,21 @@
+CREATE TABLESPACE mid_term DATAFILE 'correa.dbf' SIZE 25M
+ONLINE;
+
+
+--ALTER SESSION SET "_ORACLE_SCRIPT" = TRUE;
+
+ -- CREACION PERFIL 
+    create profile exam LIMIT
+    FAILED_LOGIN_ATTEMPTS 4
+    IDLE_TIME 10;
+
+ -- CREACION USUARIO
+    CREATE USER ejercicios
+    IDENTIFIED by april
+    DEFAULT TABLESPACE mid_term
+    QUOTA UNLIMITED ON mid_term
+    PROFILE exam;
+    
+    GRANT  DBA, CONNECT TO ejercicios;
+    
+    
