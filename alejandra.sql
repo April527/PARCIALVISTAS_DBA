@@ -5,13 +5,13 @@
 --  DDL for Function FUNCTION_PALINDROME
 --------------------------------------------------------
 
-  CREATE OR REPLACE EDITIONABLE FUNCTION "EJERCICIOS"."FUNCTION_PALINDROME" (n IN NUMBER)
+  CREATE OR REPLACE EDITIONABLE FUNCTION "EJERCICIOS"."FUNCTION_PALINDROME" (x IN NUMBER)
 RETURN NUMBER IS 
   Z NUMBER := 0;
   m NUMBER ;
   rev NUMBER := 0;
   r NUMBER ;
-  n1 NUMBER;
+  n NUMBER := x;
   --X VARCHAR(150) := '';
 
 BEGIN
@@ -20,7 +20,7 @@ BEGIN
         loop
             r:=mod(n,10);
             rev:=(rev*10)+r;
-            n1:=trunc(n/10);
+            n:=trunc(n/10);
         end loop;
 
         DBMS_OUTPUT.PUT_LINE( rev);
